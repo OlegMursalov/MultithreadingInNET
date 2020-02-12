@@ -48,6 +48,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Structure\ConfigData.cs" />
     <Compile Include="Structure\ConfigReader.cs" />
+    <Compile Include="Structure\GoodInfoDTO.cs" />
     <Compile Include="Structure\MainParser.cs" />
   </ItemGroup>
   <ItemGroup>

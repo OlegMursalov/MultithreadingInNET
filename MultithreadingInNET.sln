@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28010.2041
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultithreadingInNET", "MultithreadingInNET\MultithreadingInNET.csproj", "{1247C3CF-C8E4-4387-9866-AB7BE452775A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParserAvito", "ParserAvito\ParserAvito.csproj", "{995E5B18-B718-459B-A9FC-4162C1018DCC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{1247C3CF-C8E4-4387-9866-AB7BE452775A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1247C3CF-C8E4-4387-9866-AB7BE452775A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1247C3CF-C8E4-4387-9866-AB7BE452775A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{995E5B18-B718-459B-A9FC-4162C1018DCC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{995E5B18-B718-459B-A9FC-4162C1018DCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{995E5B18-B718-459B-A9FC-4162C1018DCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{995E5B18-B718-459B-A9FC-4162C1018DCC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

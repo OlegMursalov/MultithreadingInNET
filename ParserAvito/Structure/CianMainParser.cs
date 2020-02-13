@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Net;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -47,19 +48,27 @@ namespace ParserAvito.Structure
             FileStream mainFileStream = null;
             try
             {
-                mainFileStream = new FileStream(_pathToFile, FileMode.Append, FileAccess.Write, FileShare.Write);
+                mainFileStream = new FileStream(_pathToFile, FileMode.Append, FileAccess.Write, FileShare.ReadWrite);
                 for (int i = 0; i < _amountOfGoods; i++)
                 {
                     var html = GetHTML(pageNumber: i);
                     var cq = CQ.Create(html);
-                    IEnumerable<IDomObject> result = cq.Find("div.c6e8ba5398--single_title--22TGT");
-                    foreach (var div in result)
+                    IEnumerable<IDomObject> result = cq.Find("div[class*='--single_title--']");
+                    if (result.Count() > 0)
                     {
-                        var title = div.FirstChild.ToString();
-                        var goodInfo = GetGood(title);
-                        SaveGoodInfoToFile(mainFileStream, goodInfo);
+                        foreach (var div in result)
+                        {
+                            var title = div.FirstChild.ToString();
+                            var goodInfo = GetGood(title);
+                            SaveGoodInfoToFile(mainFileStream, goodInfo, (good) => Console.WriteLine($"Записан - {good.Title}"));
+                        }
+                    }
+                    else
+                    {
+                        break;
                     }
                 }
+                Console.WriteLine("Консолька успешно отработала!");
             }
             catch (UnauthorizedAccessException)
             {
@@ -74,7 +83,7 @@ namespace ParserAvito.Structure
             }
         }
 
-        internal void SaveGoodInfoToFile(FileStream mainFileStream, GoodInfoDTO goodInfoDTO)
+        internal void SaveGoodInfoToFile(FileStream mainFileStream, GoodInfoDTO goodInfoDTO, Action<GoodInfoDTO> postAct)
         {
             var sb = new StringBuilder();
             sb.AppendLine("- - - - -");
@@ -82,6 +91,7 @@ namespace ParserAvito.Structure
             sb.AppendLine("- - - - -");
             var bytes = Encoding.UTF8.GetBytes(sb.ToString());
             mainFileStream.Write(bytes, 0, bytes.Length);
+            postAct(goodInfoDTO);
         }
 
         internal GoodInfoDTO GetGood(string title)

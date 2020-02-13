@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultithreadingInNET", "Mult
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParserAvito", "ParserAvito\ParserAvito.csproj", "{995E5B18-B718-459B-A9FC-4162C1018DCC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleAppTest", "ConsoleAppTest\ConsoleAppTest.csproj", "{150C43F2-AAAA-45BF-89A9-288C38368F7D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{995E5B18-B718-459B-A9FC-4162C1018DCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{995E5B18-B718-459B-A9FC-4162C1018DCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{995E5B18-B718-459B-A9FC-4162C1018DCC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{150C43F2-AAAA-45BF-89A9-288C38368F7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{150C43F2-AAAA-45BF-89A9-288C38368F7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{150C43F2-AAAA-45BF-89A9-288C38368F7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{150C43F2-AAAA-45BF-89A9-288C38368F7D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

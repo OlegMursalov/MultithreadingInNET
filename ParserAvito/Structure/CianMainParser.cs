@@ -49,11 +49,11 @@ namespace ParserAvito.Structure
             try
             {
                 mainFileStream = new FileStream(_pathToFile, FileMode.Append, FileAccess.Write, FileShare.ReadWrite);
-                for (int i = 0; i < _amountOfGoods; i++)
+                for (int i = 1; i < _amountOfGoods; i++)
                 {
                     var html = GetHTML(pageNumber: i);
                     var cq = CQ.Create(html);
-                    IEnumerable<IDomObject> result = cq.Find("div[class*='--single_title--']");
+                    IEnumerable<IDomObject> result = cq.Find("div[class*=\"--single_title--\"]");
                     if (result.Count() > 0)
                     {
                         foreach (var div in result)

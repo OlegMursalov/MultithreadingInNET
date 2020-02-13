@@ -7,7 +7,7 @@ namespace ParserAvito
         static void Main()
         {
             var configData = ConfigReader.Execute();
-            var mainParser = new MainParser(configData);
+            var mainParser = new CianMainParser(configData);
             mainParser.Process();
         }
     }
